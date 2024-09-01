@@ -71,9 +71,18 @@ console.log(whoIsBigger(30, 60));
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 function splitMe(str) {
-  return str.split(" "); //USO SPLIT PER DIVIDERE LA STRINGA STR IN UN ARRAY DI PAROLE E LO SEPARO CON LO SPAZIO.
+  let lettere = str.split(" "); //USO SPLIT PER DIVIDERE LA STRINGA STR IN UN ARRAY DI PAROLE E LO SEPARO CON LO SPAZIO.
+  let lettereMaiuscole = [];
+  for (let i = 0; i < lettere.length; i++) {
+    let w = lettere[i];
+    let primaLettera = w.charAt(0).toUpperCase();
+    let lettereRestanti = w.slice(1);
+    let parolaCompleta = primaLettera + lettereRestanti;
+    lettereMaiuscole.push(parolaCompleta);
+  }
+  return lettereMaiuscole;
 }
-console.log(splitMe("I love juventus"));
+console.log(splitMe("stasera si gioca in 10, Vlahovic è espulso."));
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
