@@ -89,7 +89,10 @@ console.log(deleteOne("Vlahovic", false));
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-
+function onlyLetters(str) {
+  return str.replace(/[0-9]/g, ""); //REPLACE RIMUOVO CIFRE D STRINGA CON /[0-9]/g CERCO E CIFRE A 0 A 9 NELE STRINGA
+}
+console.log(onlyLetters("4 ever Juventus"));
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
@@ -254,7 +257,14 @@ console.log(selectAllTd());
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
-
+function printAllTdText() {
+  let tabella = document.querySelectorAll("td");
+  tabella.forEach((td) => {
+    console.log(td.textContent); // con il forEach selezioni su ogni elemento della td e lo stampo in console con la proprietà textContent
+  });
+}
+console.log;
+printAllTdText();
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
@@ -268,7 +278,14 @@ redBackgroundToLinks(); // uso la console per colorare di rosso gli elementi
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+function addToMyList(testo) {
+  let ul = document.getElementById("myList");
+  let li = document.createElement("li");
+  li.textContent = testo; // Imposto il contenuto testuale dell'elemento li
+  ul.appendChild(li); // Aggiungo li come figlio di ul.
+}
+console.log;
+addToMyList("Maurizio Sarri");
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
@@ -303,6 +320,14 @@ addToMyList("Antonio Conte");
   ***
 
 */
+function halfTree(altezza) {
+  for (let i = 1; i <= altezza; i++) {
+    console.log("*".repeat(i)); // repeat(i) crea una stringa con i asterischi e con il console provo a stamparla sul browser ogni volta.
+  }
+}
+
+console.log;
+halfTree(11);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -315,6 +340,15 @@ addToMyList("Antonio Conte");
   *****
 
 */
+function tree(altezza) {
+  for (let i = 1; i <= altezza; i++) {
+    console.log(" ".repeat(altezza - i) + "*".repeat(i * 2 - 1));
+    // repeat(altezza - i) creo una stringa con gli spazi per allineare gli asterischi al centro.
+    // repeat(i * 2 - 1) creo una stringa con un numero dispari di asterischi, per formare livell diversi dell'albero.
+  }
+}
+console.log;
+tree(11);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
